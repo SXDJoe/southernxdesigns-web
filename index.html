@@ -48,7 +48,7 @@ strong { color: var(--paper); font-weight: 600; }
   text-transform: uppercase; color: var(--paper); margin: 0;
   letter-spacing: -0.025em; line-height: 0.92; text-wrap: balance;
 }
-h1 { font-size: clamp(2.6rem, min(8.8vw, 15vh), 14rem); overflow-wrap: break-word; }
+h1 { font-size: clamp(2.6rem, 8.8vw, 14rem); overflow-wrap: break-word; }
 h2 { font-size: clamp(1.8rem, 4vw, 4rem); overflow-wrap: break-word; }
 h3 { font-size: clamp(1.15rem, 1.8vw, 1.6rem); font-weight: 800; line-height: 1.02; letter-spacing: 0; }
 .o { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
@@ -119,11 +119,10 @@ section:last-of-type { padding-bottom: clamp(5rem, 10vw, 9rem); }
 }
 @keyframes mark-in { from { transform: rotate(-14deg) scale(.92); opacity: .4; } to { transform: none; opacity: .95; } }
 @media (max-width: 640px) { .hero-mark { right: var(--edge); bottom: 16px; width: 130px; opacity: .7; } }
-.scroll-cue { position: fixed; z-index: 25; left: 50%; bottom: calc(clamp(12px, 3vh, 32px) + env(safe-area-inset-bottom, 0px)); transition: opacity .3s, visibility .3s; transform: translateX(-50%); color: var(--signal); padding: .5rem; display: block; line-height: 0; animation: cue 1.8s ease-in-out infinite; }
+.scroll-cue { position: absolute; left: 50%; bottom: clamp(16px, 4vh, 40px); transform: translateX(-50%); color: var(--signal); padding: .5rem; display: block; line-height: 0; animation: cue 1.8s ease-in-out infinite; }
 .scroll-cue:hover { color: var(--paper); }
-.scroll-cue.gone { opacity: 0 !important; visibility: hidden; animation: none; }
 @keyframes cue { 0%, 100% { transform: translate(-50%, 0); opacity: 1; } 50% { transform: translate(-50%, 10px); opacity: .55; } }
-.hero { text-align: center; padding-block: clamp(2rem, 6vh, 5rem) clamp(5rem, 12vh, 8rem); min-height: calc(100vh - var(--chrome, 76px)); min-height: calc(100svh - var(--chrome, 76px)); align-content: center; display: grid; gap: clamp(1.8rem, 3vw, 2.6rem); justify-items: center; }
+.hero { text-align: center; padding-block: clamp(3rem, 8vw, 6rem); min-height: calc(100vh - 76px); min-height: calc(100svh - 76px); align-content: center; display: grid; gap: clamp(1.8rem, 3vw, 2.6rem); justify-items: center; }
 .hero h1 span { display: block; animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
 .hero h1 span:nth-child(2) { animation-delay: .08s; }
 .hero h1 span:nth-child(3) { animation-delay: .16s; }
@@ -601,14 +600,6 @@ textarea { min-height: 5.5rem; resize: vertical; }
   var POPUP_KEY = "sxd_contact_popup_closed", POPUP_DAYS = 30, POPUP_DELAY_MS = 60000;
 
   if (LIVE_HOSTS.indexOf(location.hostname) === -1) document.getElementById("previewStrip").hidden = false;
-  // Hero fills exactly the visible screen below the header (and preview strip), so the scroll arrow stays in view.
-  var headEl = document.querySelector(".head");
-  function sizeHero() { document.documentElement.style.setProperty("--chrome", Math.round(headEl.getBoundingClientRect().bottom + scrollY) + "px"); }
-  sizeHero(); addEventListener("resize", sizeHero);
-  // Scroll arrow is pinned to the bottom of the screen and fades out once the reader starts scrolling.
-  var cue = document.querySelector(".scroll-cue");
-  function cueState() { cue.classList.toggle("gone", scrollY > 60); }
-  cueState(); addEventListener("scroll", cueState, { passive: true });
   document.getElementById("year").textContent = new Date().getFullYear();
 
   var booking = document.getElementById("bookingLink");
