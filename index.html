@@ -119,9 +119,9 @@ section:last-of-type { padding-bottom: clamp(5rem, 10vw, 9rem); }
 }
 @keyframes mark-in { from { transform: rotate(-14deg) scale(.92); opacity: .4; } to { transform: none; opacity: .95; } }
 @media (max-width: 640px) { .hero-mark { right: var(--edge); bottom: 16px; width: 130px; opacity: .7; } }
-.scroll-cue { color: var(--signal); padding: .25rem; display: block; line-height: 0; margin-top: 0; animation: cue 1.8s ease-in-out infinite; }
+.scroll-cue { position: absolute; left: 50%; top: var(--cue-top, auto); bottom: var(--cue-bottom, 24px); color: var(--signal); padding: .25rem; display: block; line-height: 0; animation: cue 1.8s ease-in-out infinite; }
 .scroll-cue:hover { color: var(--paper); }
-@keyframes cue { 0%, 100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(10px); opacity: .55; } }
+@keyframes cue { 0%, 100% { transform: translate(-50%, 0); opacity: 1; } 50% { transform: translate(-50%, 10px); opacity: .55; } }
 .hero { text-align: center; padding-block: clamp(1.5rem, 4vh, 4rem); min-height: calc(100vh - 76px); min-height: calc(100svh - 76px); align-content: center; display: grid; gap: clamp(1.1rem, 3vh, 2.6rem); justify-items: center; }
 .hero h1 span { display: block; animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
 .hero h1 span:nth-child(2) { animation-delay: .08s; }
@@ -600,6 +600,20 @@ textarea { min-height: 5.5rem; resize: vertical; }
   var POPUP_KEY = "sxd_contact_popup_closed", POPUP_DAYS = 30, POPUP_DELAY_MS = 60000;
 
   if (LIVE_HOSTS.indexOf(location.hostname) === -1) document.getElementById("previewStrip").hidden = false;
+  // Scroll arrow sits halfway between the hero button and the bottom of the first screen.
+  (function () {
+    var hero = document.querySelector(".hero"), acts = hero.querySelector(".actions"), cue = hero.querySelector(".scroll-cue");
+    function place() {
+      var top0 = hero.getBoundingClientRect().top + scrollY;
+      var from = acts.getBoundingClientRect().bottom + scrollY - top0;
+      var to = Math.min(hero.offsetHeight, innerHeight - top0);
+      var mid = from + (to - from) / 2 - cue.offsetHeight / 2;
+      hero.style.setProperty("--cue-top", Math.round(Math.min(to - cue.offsetHeight - 6, Math.max(from + 4, mid))) + "px");
+      hero.style.setProperty("--cue-bottom", "auto");
+    }
+    place(); addEventListener("resize", place); addEventListener("load", place);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+  })();
   document.getElementById("year").textContent = new Date().getFullYear();
 
   var booking = document.getElementById("bookingLink");
