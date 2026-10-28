@@ -136,6 +136,9 @@ section:last-of-type { padding-bottom: clamp(5rem, 10vw, 9rem); }
 .rows { list-style: none; margin: 0; padding: 0; counter-reset: n; border-top: 1px solid var(--outline); }
 .rows li { counter-increment: n; display: grid; grid-template-columns: clamp(4.5rem, 9vw, 8rem) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); padding-block: clamp(1.3rem, 2.5vw, 2rem); border-bottom: 1px solid var(--outline); align-items: baseline; }
 .rows li::before { content: "0" counter(n); font: 900 clamp(2.2rem, 4.6vw, 4.4rem)/0.9 var(--display); font-stretch: 125%; color: transparent; -webkit-text-stroke: 1.2px var(--paper); }
+.intro-center { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 1.2rem; }
+.rows-center { max-width: 64rem; margin-inline: auto; }
+.intro-center .stack { justify-items: center; margin-inline: auto; }
 .rows li p { font-size: clamp(1.05rem, 1.7vw, 1.35rem); color: var(--paper); font-weight: 500; max-width: 46rem; }
 
 /* Statement */
@@ -277,11 +280,11 @@ textarea { min-height: 5.5rem; resize: vertical; }
   </section>
 
   <section id="questions" aria-labelledby="questions-title">
-    <div class="intro">
+    <div class="intro intro-center">
       <h2 id="questions-title">Five <span class="o">questions</span></h2>
       <p class="hi measure" style="font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:500">In a programme that is working, every one of them has an answer.</p>
     </div>
-    <ol class="rows">
+    <ol class="rows rows-center">
       <li><p>Ask the CEO what this company is becoming. Ask the janitor. Do you get the same answer.</p></li>
       <li><p>Name the last person who said out loud that a process should stop existing. What happened to them.</p></li>
       <li><p>Every name on the transformation team was chosen for knowing how the company runs today. Which of them was chosen for being willing to end it.</p></li>
@@ -303,7 +306,7 @@ textarea { min-height: 5.5rem; resize: vertical; }
   </section>
 
   <section id="who" aria-labelledby="who-title">
-    <div class="intro">
+    <div class="intro intro-center">
       <h2 id="who-title">Who this <span class="o">is for</span></h2>
       <div class="stack measure">
         <p class="hi" style="font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:500;line-height:1.4">CEOs, CFOs, COOs and executive sponsors accountable for major ERP or technology-enabled business transformations before implementation begins.</p>
