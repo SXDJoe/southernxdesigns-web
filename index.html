@@ -5,706 +5,640 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Southern Xross Designs Gramann</title>
 <meta name="description" content="Independent challenge for executive sponsors before unresolved business decisions become expensive system changes.">
+<meta property="og:title" content="Southern Xross Designs Gramann">
+<meta property="og:description" content="Independent challenge for executive sponsors before unresolved business decisions become expensive system changes.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,700;1,6..12,300&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100,400;100,500;100,600;100,700;125,800;125,900&display=swap">
 <style>
-/* Layout: one long charcoal scroll. Hero with skyline and radial mark off-canvas right;
-   text column 66ch on the left third; yellow is reserved for the mark, numbers and the one action. */
+/* Layout: full-width black pages with 44px margins, no centred container. Wide heavy uppercase
+   headlines with one outline phrase each; 1px light outlines, square corners, no shadows.
+   Yellow only on the logo mark, stage numbers and evidence figures. */
 :root {
-  --ink-0: #121316;
-  --ink-1: #1a1c20;
-  --ink-2: #24272c;
-  --paper: #eceef1;
-  --mute: #a3a9b3;
-  --steel: #7d8a9c;
+  --ink: #050505;
+  --panel: #0d0d0d;
+  --paper: #f2f2f2;
+  --body: #bdbdbd;
+  --mute: #8c8c8c;
+  --hair: #2b2b2b;
+  --outline: rgba(242, 242, 242, 0.16);
   --signal: #ffc000;
-  --line: rgba(236, 238, 241, 0.12);
-  --display: "Libre Caslon Display", "Libre Caslon Text", Georgia, "Times New Roman", serif;
-  --body: "Nunito Sans", "Segoe UI", Candara, "Gill Sans", system-ui, sans-serif;
-  --measure: 66ch;
-  --gutter: clamp(16px, 5vw, 72px);
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --text: "Archivo", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --edge: clamp(20px, 3.1vw, 44px);
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  margin: 0;
-  background: var(--ink-0);
-  color: var(--paper);
-  font: 300 1.0625rem/1.65 var(--body);
+  margin: 0; background: var(--ink); color: var(--body);
+  font: 400 1.0625rem/1.6 var(--text); font-stretch: 100%;
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; }
-h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; text-wrap: balance; margin: 0; }
-h2 { font-size: clamp(2rem, 4.2vw, 3rem); }
-h3 { font-size: clamp(1.4rem, 2.4vw, 1.75rem); }
 p { margin: 0; }
-strong { font-weight: 700; }
-.label {
-  font: 700 0.75rem/1.2 var(--body);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--steel);
+strong { color: var(--paper); font-weight: 600; }
+
+/* Display type */
+.d, h1, h2, h3 {
+  font-family: var(--display); font-stretch: 125%; font-weight: 900;
+  text-transform: uppercase; color: var(--paper); margin: 0;
+  letter-spacing: -0.025em; line-height: 0.92; text-wrap: balance;
 }
-.wrap { padding-inline: var(--gutter); max-width: 1280px; margin-inline: auto; }
-.prose { max-width: var(--measure); display: grid; gap: 1.1em; }
-.prose p { color: var(--paper); }
-.quiet { color: var(--mute); }
+h1 { font-size: clamp(2.2rem, 7.4vw, 7.4rem); overflow-wrap: break-word; }
+h2 { font-size: clamp(1.8rem, 4vw, 4rem); overflow-wrap: break-word; }
+h3 { font-size: clamp(1.15rem, 1.8vw, 1.6rem); font-weight: 800; line-height: 1.02; letter-spacing: 0; }
+.o { color: transparent; -webkit-text-stroke: 1.5px var(--paper); }
+@supports not (-webkit-text-stroke: 1px #000) { .o { color: var(--paper); } }
+.label {
+  font: 700 0.72rem/1.2 var(--text); letter-spacing: 0.14em; text-transform: uppercase; color: var(--mute);
+}
+.hi { color: var(--paper); }
+.measure { max-width: 40rem; }
+.stack { display: grid; gap: 1.1rem; align-content: start; }
 
 /* Buttons */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
-  font: 700 0.95rem/1 var(--body); letter-spacing: 0.02em;
-  padding: 0.95em 1.4em; border-radius: 2px; cursor: pointer; text-decoration: none;
-  border: 1px solid transparent; transition: background-color .2s, color .2s, border-color .2s;
+  display: inline-flex; align-items: center; gap: .7em; cursor: pointer; text-decoration: none;
+  font: 700 .8rem/1 var(--text); letter-spacing: .12em; text-transform: uppercase;
+  padding: 1.15em 1.6em; border-radius: 0; border: 1px solid var(--paper);
+  background: var(--paper); color: var(--ink); transition: background-color .2s, color .2s;
 }
-.btn-primary { background: var(--signal); color: var(--ink-0); }
-.btn-primary:hover { background: #ffd24d; }
-.btn-ghost { background: transparent; color: var(--paper); border-color: rgba(236,238,241,.35); }
-.btn-ghost:hover { border-color: var(--paper); }
+.btn .arr { transition: transform .2s; }
+.btn:hover { background: transparent; color: var(--paper); }
+.btn:hover .arr { transform: translateX(5px); }
+.btn-line { background: transparent; color: var(--paper); border-color: var(--outline); }
+.btn-line:hover { border-color: var(--paper); }
+.btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+.tlink { font: 700 .75rem/1 var(--text); letter-spacing: .12em; text-transform: uppercase; color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--outline); padding-bottom: .4em; justify-self: start; }
+.tlink:hover { border-color: var(--paper); }
 
-/* Preview strip (hidden on the live domain) */
-.preview-strip {
-  background: var(--signal); color: var(--ink-0);
-  font: 700 0.8rem/1.4 var(--body); padding: 0.5rem var(--gutter); text-align: center;
-}
+.preview-strip { background: var(--signal); color: var(--ink); font: 700 .78rem/1.4 var(--text); padding: .5rem var(--edge); text-align: center; }
 
 /* Header */
-.site-head {
-  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
-  background: rgba(18, 19, 22, 0.86); backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+.head {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--ink);
+  border-bottom: 1px solid var(--outline);
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 1rem var(--edge);
 }
-.site-head .wrap { display: flex; align-items: center; gap: 1.5rem; padding-block: 0.8rem; }
-.brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; min-width: 0; }
-.brand img { width: 30px; height: 30px; }
-.brand span { font: 400 1.05rem/1.1 var(--display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.site-nav { display: flex; gap: 1.5rem; margin-left: auto; align-items: center; }
-.site-nav a { font-size: 0.9rem; text-decoration: none; color: var(--mute); }
-.site-nav a:hover { color: var(--paper); }
-@media (max-width: 860px) { .site-nav a:not(.btn) { display: none; } }
-@media (max-width: 480px) { .site-nav .btn { padding: 0.75em 0.9em; font-size: 0.8rem; } .brand span { font-size: 0.95rem; } }
-
-/* Hero */
-.hero {
-  position: relative; overflow: hidden; isolation: isolate;
-  background:
-    linear-gradient(90deg, rgba(18,19,22,.96) 0%, rgba(18,19,22,.82) 38%, rgba(18,19,22,.25) 75%, rgba(18,19,22,.45) 100%),
-    linear-gradient(180deg, rgba(18,19,22,0) 55%, var(--ink-0) 100%),
-    url("assets/hero.jpg") center right / cover no-repeat,
-    linear-gradient(160deg, #3a4150 0%, #24272c 45%, var(--ink-0) 100%);
+.head .brandtext { font: 700 .72rem/1.3 var(--text); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); text-decoration: none; }
+.head .mark { justify-self: center; }
+.head .mark img { width: 46px; height: 46px; }
+.head nav { justify-self: end; display: grid; gap: .1rem; text-align: right; }
+.head nav a { font: 400 .95rem/1.3 var(--text); color: var(--paper); text-decoration: none; text-transform: lowercase; }
+.head nav a:hover { color: var(--signal); }
+@media (max-width: 640px) {
+  .head { grid-template-columns: auto 1fr; padding-block: .7rem; }
+  .head .brandtext { display: none; }
+  .head .mark { justify-self: start; }
+  .head .mark img { width: 38px; height: 38px; }
+  .head nav { grid-auto-flow: column; gap: 1rem; }
+  .head nav a:not(.keep) { display: none; }
 }
-.hero::after { /* charcoal grade over any photo */
-  content: ""; position: absolute; inset: 0; z-index: -1;
-  background: linear-gradient(180deg, rgba(58,65,80,.35), rgba(18,19,22,.2));
-}
-.hero .wrap { padding-block: clamp(4.5rem, 12vw, 9rem) clamp(5rem, 12vw, 9rem); position: relative; }
-.hero-mark {
-  position: absolute; z-index: -1; pointer-events: none;
-  width: clamp(240px, 34vw, 520px); right: -6%; bottom: -14%;
-  opacity: .95; animation: mark-in 1.6s cubic-bezier(.2,.7,.2,1) both;
-}
-@keyframes mark-in { from { transform: rotate(-14deg) scale(.92); opacity: .4; } to { transform: none; opacity: .95; } }
-.hero-copy { max-width: 40rem; display: grid; gap: 1.5rem; }
-.hero h1 { font-size: clamp(2.6rem, 6.6vw, 5rem); line-height: 1.04; }
-.hero-sub { font-size: clamp(1.1rem, 1.8vw, 1.35rem); color: var(--paper); max-width: 34rem; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; padding-top: 0.5rem; }
 
 /* Sections */
-section { scroll-margin-top: 4.5rem; }
-.band { padding-block: clamp(4rem, 9vw, 7rem); border-top: 1px solid var(--line); }
-.band-raised { background: var(--ink-1); }
-.section-head { display: grid; gap: 0.9rem; margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 48rem; }
+section { padding: clamp(5rem, 10vw, 9rem) var(--edge) 0; scroll-margin-top: 5rem; }
+section:last-of-type { padding-bottom: clamp(5rem, 10vw, 9rem); }
+.intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+@media (max-width: 900px) { .intro { grid-template-columns: minmax(0, 1fr); } }
 
-.paradox-title { display: grid; gap: 1.6rem; max-width: 52rem; }
-.paradox-title h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
-.paradox-title .lede { font: 300 clamp(1.25rem, 2.4vw, 1.6rem)/1.45 var(--body); }
-.tm { font-family: var(--body); font-size: .45em; vertical-align: super; color: var(--steel); }
+/* Hero */
+.hero { text-align: center; padding-block: clamp(4.5rem, 12vw, 10rem) clamp(3rem, 8vw, 7rem); display: grid; gap: clamp(1.8rem, 3vw, 2.6rem); justify-items: center; }
+.hero h1 span { display: block; animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+.hero h1 span:nth-child(2) { animation-delay: .08s; }
+.hero h1 span:nth-child(3) { animation-delay: .16s; }
+@keyframes rise { from { transform: translateY(.25em); opacity: .2; } to { transform: none; opacity: 1; } }
+.hero .sub { max-width: 34rem; font-size: clamp(1rem, 1.4vw, 1.15rem); font-weight: 500; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; }
 
-.split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
-@media (max-width: 860px) { .split { grid-template-columns: minmax(0, 1fr); } }
+/* Cards */
+.cards { display: grid; gap: 28px; }
+.cards-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 1000px) { .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .cards-3, .cards-4 { grid-template-columns: minmax(0, 1fr); } }
+.card { border: 1px solid var(--outline); padding: clamp(1.4rem, 2.4vw, 2rem); display: grid; gap: 1rem; align-content: start; transition: border-color .25s; min-width: 0; }
+.card:hover { border-color: rgba(242,242,242,.6); }
+.sit { min-height: 15rem; align-content: space-between; }
+.sit .label { color: var(--mute); }
 
-/* Sponsor testimony */
-.testimony { display: grid; gap: 1.4rem; max-width: 52rem; margin: 0; padding-left: clamp(1rem, 3vw, 2.5rem); border-left: 1px solid var(--signal); }
-.testimony p { font: 300 italic clamp(1.1rem, 1.9vw, 1.3rem)/1.6 var(--body); }
-.testimony p:last-child { font: 400 clamp(1.5rem, 2.8vw, 2rem)/1.3 var(--display); font-style: normal; }
-.attribution { margin-top: 1.4rem; padding-left: clamp(1rem, 3vw, 2.5rem); }
+/* Problem */
+.testimony { margin: 0; display: grid; gap: 1.3rem; max-width: 46rem; }
+.testimony p { font-size: clamp(1.05rem, 1.5vw, 1.2rem); }
+.bigquote { font-family: var(--display); font-stretch: 125%; font-weight: 800; text-transform: uppercase; color: var(--paper); font-size: clamp(1.4rem, 3.2vw, 2.9rem); line-height: 1.05; letter-spacing: 0; margin-top: clamp(2.5rem, 5vw, 4rem); max-width: 60rem; text-wrap: balance; }
+.attrib { margin-top: 1.4rem; }
 
-/* Five questions */
-.questions { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; counter-reset: q; max-width: 60rem; }
-.questions li {
-  counter-increment: q; display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 1rem;
-  padding-block: 1.4rem; border-top: 1px solid var(--line); font-size: clamp(1.05rem, 1.7vw, 1.2rem);
-}
-.questions li:last-child { border-bottom: 1px solid var(--line); }
-.questions li::before { content: counter(q); font: 400 2rem/1 var(--display); color: var(--signal); font-variant-numeric: tabular-nums; }
+/* Numbered list */
+.rows { list-style: none; margin: 0; padding: 0; counter-reset: n; border-top: 1px solid var(--outline); }
+.rows li { counter-increment: n; display: grid; grid-template-columns: clamp(4.5rem, 9vw, 8rem) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); padding-block: clamp(1.3rem, 2.5vw, 2rem); border-bottom: 1px solid var(--outline); align-items: baseline; }
+.rows li::before { content: "0" counter(n); font: 900 clamp(2.2rem, 4.6vw, 4.4rem)/0.9 var(--display); font-stretch: 125%; color: transparent; -webkit-text-stroke: 1.2px var(--paper); }
+.rows li p { font-size: clamp(1.05rem, 1.7vw, 1.35rem); color: var(--paper); font-weight: 500; max-width: 46rem; }
 
-/* Statement band */
-.statement { text-align: left; display: grid; gap: 1.2rem; max-width: 60rem; }
-.statement p { font: 400 clamp(1.8rem, 4vw, 3rem)/1.18 var(--display); text-wrap: balance; }
-.statement p + p { color: var(--signal); }
-.lenses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); margin-top: clamp(2.5rem, 5vw, 4rem); }
-.lenses div { background: var(--ink-1); padding: clamp(1.4rem, 3vw, 2.2rem); display: grid; gap: .6rem; }
-.lenses p { font-size: 1.15rem; }
-@media (max-width: 640px) { .lenses { grid-template-columns: minmax(0, 1fr); } }
+/* Statement */
+.statement { text-align: center; display: grid; gap: 2rem; justify-items: center; }
+.statement .bigquote { margin: 0; max-width: 70rem; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; width: 100%; max-width: 70rem; text-align: left; }
+@media (max-width: 700px) { .pair { grid-template-columns: minmax(0, 1fr); } }
 
-/* Who */
-.pull { font: 400 clamp(1.35rem, 2.5vw, 1.75rem)/1.35 var(--display); color: var(--paper); }
-.role-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); }
-.role-grid > div { background: var(--ink-0); padding: clamp(1.4rem, 2.5vw, 2rem); display: grid; gap: .8rem; align-content: start; }
-.role-grid .owner { grid-column: 1 / -1; background: var(--ink-2); }
-.role-grid .owner p { font: 400 clamp(1.3rem, 2.4vw, 1.7rem)/1.3 var(--display); }
-@media (max-width: 860px) { .role-grid { grid-template-columns: minmax(0, 1fr); } }
-
-/* How it runs */
-.stage { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); padding-block: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--line); }
-.stage-meta { display: grid; gap: .6rem; align-content: start; }
-.stage-meta .num { font: 400 3.5rem/1 var(--display); color: var(--signal); }
-.stage-meta .dur { font-weight: 700; color: var(--paper); }
-@media (max-width: 760px) { .stage { grid-template-columns: minmax(0, 1fr); } }
-.parts { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; gap: 1px; background: var(--line); counter-reset: part; }
-.parts li { background: var(--ink-1); padding: 1.3rem 1.4rem; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: .9rem; counter-increment: part; }
-.parts li::before { content: counter(part); font: 400 1.5rem/1.2 var(--display); color: var(--steel); }
-.parts strong { display: block; font: 400 1.3rem/1.3 var(--display); margin-bottom: .35rem; }
-.callout { border-left: 1px solid var(--signal); padding: .2rem 0 .2rem 1.2rem; }
-
-/* Infographic slot (pending source) */
-.pending { border: 1px dashed rgba(255,192,0,.5); padding: clamp(1.5rem, 4vw, 2.5rem); display: grid; gap: .8rem; max-width: 60rem; }
+/* Timeline */
+.timeline { position: relative; display: grid; gap: 0; }
+.timeline::before { content: ""; position: absolute; left: calc(clamp(4.5rem, 9vw, 8rem) / 2); top: 0; bottom: 0; width: 1px; background: var(--hair); }
+.timeline .fill { position: absolute; left: calc(clamp(4.5rem, 9vw, 8rem) / 2); top: 0; width: 1px; height: 100%; background: var(--signal); transform-origin: top; transform: scaleY(var(--p, 0)); }
+.step { position: relative; display: grid; grid-template-columns: clamp(4.5rem, 9vw, 8rem) minmax(0, 1fr); gap: clamp(1rem, 3vw, 2.5rem); padding-block: 0 clamp(2.5rem, 5vw, 4rem); }
+.step .num { font: 900 clamp(2.6rem, 5vw, 4.8rem)/0.9 var(--display); font-stretch: 125%; color: var(--ink); -webkit-text-stroke: 1.2px var(--signal); background: var(--ink); text-align: center; padding-block: .2rem; position: relative; }
+.step .stack { gap: .9rem; }
+.dur { font-weight: 700; color: var(--paper); }
 
 /* Evidence */
-.figures { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line); margin-block: 2rem; }
-.figures > div { background: var(--ink-1); padding: 1.5rem; display: grid; gap: .4rem; align-content: start; }
-.figures .val { font: 400 clamp(2.4rem, 5vw, 3.4rem)/1 var(--display); color: var(--signal); font-variant-numeric: tabular-nums; }
-.figures .what { font-size: .98rem; }
-.tag { justify-self: start; font: 700 .7rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; padding: .4em .6em; border: 1px solid currentColor; }
-.tag.measured { color: var(--paper); }
-.tag.modelled { color: var(--steel); }
-@media (max-width: 760px) { .figures { grid-template-columns: minmax(0, 1fr); } }
+.case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+@media (max-width: 900px) { .case { grid-template-columns: minmax(0, 1fr); } }
+.figs { display: grid; gap: 20px; }
+.fig { border: 1px solid var(--outline); padding: 1.5rem; display: grid; gap: .5rem; }
+.fig .val { font: 900 clamp(2.8rem, 6vw, 5.2rem)/0.9 var(--display); font-stretch: 125%; color: var(--signal); font-variant-numeric: tabular-nums; }
+.tag { justify-self: start; font: 700 .66rem/1 var(--text); letter-spacing: .16em; text-transform: uppercase; padding: .45em .65em; border: 1px solid currentColor; }
+.tag.m { color: var(--paper); } .tag.x { color: var(--mute); }
+.boxquote { border: 1px solid var(--outline); padding: 1.4rem 1.5rem; font-family: var(--display); font-stretch: 125%; font-weight: 800; text-transform: uppercase; color: var(--paper); font-size: clamp(1.05rem, 1.6vw, 1.35rem); line-height: 1.1; }
 
-.not-list { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; padding: 0; margin: 0; }
-.not-list li { border: 1px solid var(--line); padding: .55em .9em; color: var(--mute); }
+.chips { display: flex; flex-wrap: wrap; gap: .7rem; list-style: none; margin: 0; padding: 0; }
+.chips li { border: 1px solid var(--outline); padding: .9em 1.2em; color: var(--paper); font: 700 .8rem/1 var(--text); letter-spacing: .1em; text-transform: uppercase; }
 
-/* Close */
-.close { text-align: left; }
-.close .question { font: 400 clamp(2rem, 4.6vw, 3.4rem)/1.15 var(--display); max-width: 54rem; text-wrap: balance; }
-.close .question em { font-style: normal; color: var(--signal); }
-.close .hero-actions { margin-top: 2rem; }
+.pending { border: 1px dashed rgba(255,192,0,.5); padding: clamp(1.5rem, 4vw, 2.5rem); display: grid; gap: .9rem; }
 
-/* Peer document */
-.peer { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; border: 1px solid var(--line); padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--ink-1); }
+/* Closing */
+.close { text-align: center; display: grid; gap: 2rem; justify-items: center; }
+.close h2 { max-width: 80rem; }
+.peer { border: 1px solid var(--outline); padding: clamp(1.5rem, 4vw, 2.5rem); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: center; }
 @media (max-width: 760px) { .peer { grid-template-columns: minmax(0, 1fr); } }
 
 /* About */
-.about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 18rem); gap: clamp(2rem, 6vw, 6rem); align-items: start; }
-.about-grid img { width: 100%; max-width: 18rem; opacity: .9; }
-@media (max-width: 760px) { .about-grid { grid-template-columns: minmax(0, 1fr); } .about-grid img { max-width: 10rem; } }
+.about { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 5rem); }
+@media (max-width: 900px) { .about { grid-template-columns: minmax(0, 1fr); } }
 
 /* Footer */
-.site-foot { border-top: 1px solid var(--line); padding-block: 2.5rem 3rem; font-size: .9rem; color: var(--mute); }
-.site-foot .wrap { display: flex; flex-wrap: wrap; gap: 1.5rem 3rem; justify-content: space-between; }
-.site-foot address { font-style: normal; display: grid; gap: .3rem; }
-.site-foot nav { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-start; }
-.copy-line { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
-.copy-btn { background: none; border: 1px solid var(--line); color: var(--mute); font: 700 .7rem/1 var(--body); letter-spacing: .08em; text-transform: uppercase; padding: .35em .55em; cursor: pointer; }
-.copy-btn:hover { color: var(--paper); border-color: var(--paper); }
+footer { border-top: 1px solid var(--outline); margin: 0 var(--edge); padding-block: 2rem 2.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.2rem 2.5rem; font-size: .85rem; color: var(--mute); }
+footer address { font-style: normal; display: grid; gap: .25rem; }
+footer nav { display: flex; gap: 1.4rem; flex-wrap: wrap; align-items: flex-start; }
+.copyline { display: inline-flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.copy { background: none; border: 1px solid var(--outline); color: var(--mute); font: 700 .65rem/1 var(--text); letter-spacing: .1em; text-transform: uppercase; padding: .35em .55em; cursor: pointer; }
+.copy:hover { color: var(--paper); border-color: var(--paper); }
 
-/* Dialogs */
-dialog {
-  width: min(36rem, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow: auto;
-  border: 1px solid var(--line); border-top: 2px solid var(--signal); border-radius: 2px;
-  background: var(--ink-1); color: var(--paper); padding: clamp(1.4rem, 4vw, 2.2rem);
-}
-dialog::backdrop { background: rgba(10, 11, 13, .72); backdrop-filter: blur(3px); }
-.dlg-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; margin-bottom: 1.2rem; }
-.dlg-head h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
-.x { background: none; border: 0; color: var(--mute); font: 300 2rem/1 var(--body); cursor: pointer; padding: 0 .2rem; }
-.x:hover { color: var(--paper); }
+/* Overlays and dialogs */
+dialog { border: 1px solid var(--outline); border-radius: 0; background: var(--ink); color: var(--body); padding: 0; max-height: calc(100dvh - 24px); overflow: auto; }
+dialog::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(6px); }
+.dlg { width: min(44rem, calc(100vw - 24px)); }
+.scope { width: min(80rem, calc(100vw - 24px)); }
+.dlg-in { padding: clamp(1.4rem, 4vw, 2.6rem); display: grid; gap: 1.4rem; }
+.dlg-top { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+.dlg-top h2 { font-size: clamp(1.6rem, 3.6vw, 2.8rem); }
+.x { background: none; border: 1px solid var(--outline); color: var(--paper); font: 700 .72rem/1 var(--text); letter-spacing: .12em; text-transform: uppercase; padding: .8em 1em; cursor: pointer; flex: none; }
+.x:hover { border-color: var(--paper); }
+.routes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 640px) { .routes { grid-template-columns: minmax(0, 1fr); } }
+.parts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+@media (max-width: 1000px) { .parts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .parts { grid-template-columns: minmax(0, 1fr); } }
 form { display: grid; gap: .9rem; }
 .row2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
 @media (max-width: 520px) { .row2 { grid-template-columns: minmax(0, 1fr); } }
 .field { display: grid; gap: .3rem; min-width: 0; }
-.field label { font-size: .85rem; color: var(--mute); }
-.field label .req { color: var(--signal); }
-input, select, textarea {
-  width: 100%; font: 400 1rem/1.4 var(--body); color: var(--paper);
-  background: var(--ink-0); border: 1px solid rgba(236,238,241,.22); border-radius: 2px; padding: .7em .8em;
-}
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--signal); }
-textarea { min-height: 6rem; resize: vertical; }
+.field label { font: 700 .68rem/1.2 var(--text); letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
+.req { color: var(--signal); }
+input, select, textarea { width: 100%; font: 400 1rem/1.4 var(--text); color: var(--paper); background: var(--panel); border: 1px solid var(--outline); border-radius: 0; padding: .75em .85em; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--paper); }
+textarea { min-height: 5.5rem; resize: vertical; }
 .fine { font-size: .8rem; color: var(--mute); }
 .fine a { color: var(--paper); }
-.form-msg { font-size: .95rem; }
-.form-msg.err { color: #ff8a7a; }
-.done { display: grid; gap: 1rem; }
+.msg { font-size: .9rem; }
+.msg.err { color: #ff8a7a; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero-mark { animation: none; }
+  .hero h1 span { animation: none; }
+  .timeline .fill { transform: scaleY(1); }
 }
 </style>
 </head>
 <body>
 
-<div class="preview-strip" id="previewStrip" hidden>Preview. Hero photo is a placeholder and will be replaced by a licensed skyline. Forms are not connected yet.</div>
+<div class="preview-strip" id="previewStrip" hidden>Preview v2. Forms and booking are not connected yet. New copy is marked for your approval.</div>
 
-<header class="site-head">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Southern Xross Designs Gramann, back to top">
-      <img src="assets/mark.png" alt="" width="30" height="30">
-      <span>Southern Xross Designs</span>
-    </a>
-    <nav class="site-nav" aria-label="Main">
-      <a href="#paradox">The paradox</a>
-      <a href="#how">How it runs</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#about">About</a>
-      <button class="btn btn-primary" type="button" data-open="contact">Book a framing call</button>
-    </nav>
-  </div>
+<header class="head">
+  <a class="brandtext" href="#top">Southern Xross Designs</a>
+  <a class="mark" href="#top" aria-label="Southern Xross Designs Gramann, back to top"><img src="assets/mark.png" alt="" width="46" height="46"></a>
+  <nav aria-label="Main">
+    <a href="#approach">approach</a>
+    <a href="#how">engagements</a>
+    <a href="#evidence">evidence</a>
+    <a href="#contact" class="keep" data-open="contact">contact</a>
+  </nav>
 </header>
 
 <main id="top">
 
   <section class="hero" aria-labelledby="hero-title">
-    <img class="hero-mark" src="assets/mark.png" alt="">
-    <div class="wrap">
-      <div class="hero-copy">
-        <p class="label">Independent executive advisory · Zürich</p>
-        <h1 id="hero-title">Transform the business. Don't rebuild yesterday.</h1>
-        <p class="hero-sub">Independent challenge for executive sponsors before unresolved business decisions become expensive system changes.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary" type="button" data-open="contact">Book a 30-minute framing call</button>
-          <a class="btn btn-ghost" href="#questions">Take the five questions</a>
-        </div>
-      </div>
+    <h1 id="hero-title"><span>Transform the</span> <span>business. Don't</span> <span>rebuild <span class="o" style="display:inline;animation:none">yesterday.</span></span></h1>
+    <p class="sub">Independent challenge for <span class="hi">executive sponsors</span> before unresolved business decisions become <span class="hi">expensive system changes.</span></p>
+    <div class="actions">
+      <button class="btn" type="button" data-open="contact">Book a 30-minute framing call <span class="arr">→</span></button>
     </div>
   </section>
 
-  <section class="band" id="paradox" aria-labelledby="paradox-title">
-    <div class="wrap">
-      <div class="paradox-title">
-        
-        <h2 id="paradox-title">The Governance Paradox of Transformation<span class="tm">™</span></h2>
-        <p class="lede">Nothing went wrong. Every decision was reasonable. The programme still rebuilt the company it was bought to replace.</p>
+  <section id="approach" aria-labelledby="paradox-title">
+    <div class="intro">
+      <h2 id="paradox-title">The governance <span class="o">paradox</span> of transformation<span style="font-size:.35em;vertical-align:super;font-weight:400">™</span></h2>
+      <div class="stack measure">
+        <p class="hi" style="font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:500;line-height:1.4">Nothing went wrong. Every decision was reasonable. The programme still rebuilt the company it was bought to replace.</p>
+        <p>The decisions running your business today were made for the market the company served at the time.</p>
+        <p>Most of them were right when they were made. They have not been tested since. Governance is what applies the test, or what exempts the decision from it.</p>
       </div>
-      <div class="split" style="margin-top: clamp(3rem, 6vw, 5rem)">
-        <p class="pull">The decisions running your business today were made for the market the company served at the time.</p>
-        <div class="prose">
-          <p>Most of them were right when they were made. They have not been tested since. Governance is what applies the test, or what exempts the decision from it.</p>
-        </div>
-      </div>
+    </div>
+    <div class="cards cards-3" role="list" aria-label="Situations">
+      <div class="card sit" role="listitem"><p class="label">Before</p><h3>You're about to select an implementation partner.</h3></div>
+      <div class="card sit" role="listitem"><p class="label">Mobilisation</p><h3>You're mobilising the programme team.</h3></div>
+      <div class="card sit" role="listitem"><p class="label">Running</p><h3>Implementation is running and the system keeps growing.</h3></div>
     </div>
   </section>
 
-  <section class="band band-raised" id="problem" aria-labelledby="problem-title">
-    <div class="wrap">
-      <div class="section-head">
-        
-        <h2 id="problem-title">The problem</h2>
-      </div>
+  <section id="problem" aria-labelledby="problem-title">
+    <div class="intro">
+      <h2 id="problem-title">The <span class="o">problem</span></h2>
       <blockquote class="testimony">
         <p>We selected the technology, appointed an internal team, brought in an implementation partner, and approved a plan that looked credible at the time. We are now over budget, the timeline has moved several times, and the system is being extended far beyond what anyone intended.</p>
         <p>We had a vision. It never got translated down the ranks. What the team knew was that a new technology was coming. User stories became requirements, unverified, unsupported by fact.</p>
         <p>Every historical compromise was carried forward as if it were still a business requirement. Every time the business disagreed with the standard process, we approved an exception. Every exception became a system change. Nobody was clearly authorised to decide whether the business adapts or the technology bends, so the technology bent every time.</p>
-        <p>We are rebuilding the company we already had, inside the platform we bought to replace it.</p>
       </blockquote>
-      <p class="attribution label">Every sponsor, 6 to 18 months in.</p>
     </div>
+    <p class="bigquote">"We are rebuilding the company we already had, inside the platform we bought to replace it."</p>
+    <p class="label attrib">Every sponsor, 6 to 18 months in.</p>
   </section>
 
-  <section class="band" id="questions" aria-labelledby="questions-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Five questions</p>
-        <h2 id="questions-title">Five questions. In a programme that is working, every one of them has an answer.</h2>
-      </div>
-      <ol class="questions">
-        <li>Ask the CEO what this company is becoming. Ask the janitor. Do you get the same answer.</li>
-        <li>Name the last person who said out loud that a process should stop existing. What happened to them.</li>
-        <li>Every name on the transformation team was chosen for knowing how the company runs today. Which of them was chosen for being willing to end it.</li>
-        <li>Show the page that says which decisions that team can close without you. If there is no page, there is no authority.</li>
-        <li>Count how often the business disagreed with the standard system and the business changed. Compare it with how often the system changed. That ratio is your governance.</li>
-      </ol>
-      <span id="questionsEnd" aria-hidden="true"></span>
+  <section id="questions" aria-labelledby="questions-title">
+    <div class="intro">
+      <h2 id="questions-title">Five <span class="o">questions</span></h2>
+      <p class="hi measure" style="font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:500">In a programme that is working, every one of them has an answer.</p>
     </div>
+    <ol class="rows">
+      <li><p>Ask the CEO what this company is becoming. Ask the janitor. Do you get the same answer.</p></li>
+      <li><p>Name the last person who said out loud that a process should stop existing. What happened to them.</p></li>
+      <li><p>Every name on the transformation team was chosen for knowing how the company runs today. Which of them was chosen for being willing to end it.</p></li>
+      <li><p>Show the page that says which decisions that team can close without you. If there is no page, there is no authority.</p></li>
+      <li><p>Count how often the business disagreed with the standard system and the business changed. Compare it with how often the system changed. That ratio is your governance.</p></li>
+    </ol>
+    <span id="questionsEnd" aria-hidden="true"></span>
   </section>
 
-  <section class="band band-raised" aria-label="Two worlds colliding">
-    <div class="wrap">
-      <div class="statement">
-        <p>Two worlds colliding, protected by a governance that does not exist.</p>
-        <p>Transformation is governed by the system it is trying to replace.</p>
-      </div>
-      <div class="lenses">
-        <div><p class="label">Inside out</p><p>Looking from the inside out, anyone raising the firefighting word is considered crazy.</p></div>
-        <div><p class="label">Outside in</p><p>Looking from the outside in, the cause is obvious.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band" id="who" aria-labelledby="who-title">
-    <div class="wrap">
-      <div class="section-head">
-        
-        <h2 id="who-title">Who this is for</h2>
-      </div>
-      <div class="split">
-        <div class="prose">
-          <p class="pull">CEOs, CFOs, COOs and executive sponsors accountable for major ERP or technology-enabled business transformations before implementation begins.</p>
-          <p class="label" style="margin-top:1rem">In their words:</p>
-          <blockquote class="testimony" style="margin:0"><p>We're getting close to implementation, but I'm not convinced the business is as ready or aligned as the programme plan suggests.</p></blockquote>
-        </div>
-        <div class="prose">
-          <p>The moment is when the transformation moves from approval and planning toward partner selection, mobilisation or implementation, and the sponsor realises that major business decisions, ownership questions or leadership assumptions are still unresolved.</p>
-          <p>Once implementation starts, unresolved business issues become programme problems. Disruption, executive friction, delayed decisions, loss of confidence in the transformation.</p>
-        </div>
+  <section aria-label="Two worlds colliding">
+    <div class="statement">
+      <p class="bigquote">Two worlds colliding, protected by a governance <span class="o">that does not exist.</span></p>
+      <p class="bigquote" style="color:var(--signal)">Transformation is governed by the system it is trying to replace.</p>
+      <div class="pair">
+        <div class="card"><p class="label">Inside out</p><p class="hi">Looking from the inside out, anyone raising the firefighting word is considered crazy.</p></div>
+        <div class="card"><p class="label">Outside in</p><p class="hi">Looking from the outside in, the cause is obvious.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="band band-raised" id="why" aria-labelledby="why-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Ownership</p>
-        <h2 id="why-title">Why it does not sit with the CIO, the CTO or the programme director</h2>
-      </div>
-      <div class="role-grid">
-        <div><p class="label">CIO and CTO</p><p>The CIO and the CTO own technology. Whether a decision taken years ago still serves the market the company is entering is an operating question. It is not theirs to answer and it never was.</p></div>
-        <div><p class="label">Programme director</p><p>The programme director often can answer it. They are not allowed to. Nobody arbitrates what a programme is permitted to decide while being accountable for delivering it on a date. Ask a programme director to rule that a protected requirement has no evidence behind it, after the go-live date has been communicated. The date wins. Every time.</p></div>
-        <div><p class="label">Implementation partner</p><p>The implementation partner ends up holding decisions that were never theirs to make, and is then held responsible for them.</p></div>
-        <div class="owner"><p class="label">Owner</p><p>The decision belongs to the executive who ultimately owns the consequences.</p></div>
+  <section id="who" aria-labelledby="who-title">
+    <div class="intro">
+      <h2 id="who-title">Who this <span class="o">is for</span></h2>
+      <div class="stack measure">
+        <p class="hi" style="font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:500;line-height:1.4">CEOs, CFOs, COOs and executive sponsors accountable for major ERP or technology-enabled business transformations before implementation begins.</p>
+        <p class="label" style="margin-top:.6rem">In their words:</p>
+        <p class="boxquote">"We're getting close to implementation, but I'm not convinced the business is as ready or aligned as the programme plan suggests."</p>
+        <p>The moment is when the transformation moves from approval and planning toward partner selection, mobilisation or implementation, and the sponsor realises that major business decisions, ownership questions or leadership assumptions are still unresolved.</p>
+        <p>Once implementation starts, unresolved business issues become programme problems. Disruption, executive friction, delayed decisions, loss of confidence in the transformation.</p>
       </div>
     </div>
   </section>
 
-  <section class="band" id="partners" aria-labelledby="partners-title">
-    <div class="wrap">
-      <div class="pending">
-        <p class="label">Infographic in preparation</p>
-        <h3 id="partners-title">The four partner types a company needs in a Dynamics 365 transformation</h3>
-        <p class="quiet">This space holds the infographic distilled from the LinkedIn article "4 types of partner any company needs to consider when implementing Dynamics 365 Finance and Operations". Waiting for the article text.</p>
-      </div>
+  <section id="why" aria-labelledby="why-title">
+    <div class="intro">
+      <h2 id="why-title">Why it does not sit with the <span class="o">CIO, the CTO</span> or the programme director</h2>
+    </div>
+    <div class="cards cards-4">
+      <div class="card"><p class="label">CIO and CTO</p><p>The CIO and the CTO own technology. Whether a decision taken years ago still serves the market the company is entering is an operating question. It is not theirs to answer and it never was.</p></div>
+      <div class="card"><p class="label">Programme director</p><p>The programme director often can answer it. They are not allowed to. Nobody arbitrates what a programme is permitted to decide while being accountable for delivering it on a date. Ask a programme director to rule that a protected requirement has no evidence behind it, after the go-live date has been communicated. The date wins. Every time.</p></div>
+      <div class="card"><p class="label">Implementation partner</p><p>The implementation partner ends up holding decisions that were never theirs to make, and is then held responsible for them.</p></div>
+      <div class="card" style="border-color:rgba(242,242,242,.55)"><p class="label">Owner</p><h3>The decision belongs to the executive who ultimately owns the consequences.</h3></div>
     </div>
   </section>
 
-  <section class="band band-raised" id="how" aria-labelledby="how-title">
-    <div class="wrap">
-      <div class="section-head">
-        
-        <h2 id="how-title">How it runs</h2>
-        <p class="quiet">Two engagements.</p>
-      </div>
+  <section id="partners" aria-labelledby="partners-title">
+    <div class="pending">
+      <p class="label">Infographic in preparation</p>
+      <h3 id="partners-title">The four partner types a company needs in a Dynamics 365 transformation</h3>
+      <p>This space holds the infographic distilled from the LinkedIn article "4 types of partner any company needs to consider when implementing Dynamics 365 Finance and Operations". Waiting for the article text.</p>
+    </div>
+  </section>
 
-      <article class="stage" aria-labelledby="s1-title">
-        <div class="stage-meta">
-          <span class="num">1</span>
-          <p class="label">Stage 1</p>
-          <p class="dur">1 to 4 weeks</p>
-        </div>
-        <div class="prose" style="max-width:none">
-          <h3 id="s1-title">Transformation Integrity Diagnostic</h3>
-          <p class="quiet">Four parts, in order. Each one only matters if the one above it holds.</p>
-          <ol class="parts">
-            <li><div><strong>Destination.</strong>What the company is becoming, and how far that has travelled. Interviews run on volunteers, every level, plus a required set: sponsor, steering members, process owners. Volunteers, because we want the unfiltered, unbiased state. Interviews also include people who do not volunteer. A curated sample tells you what the organisation wants you to hear.</div></li>
-            <li><div><strong>Culture.</strong>Whether the organisation can reinvent itself, or only protect what it has. Same interviews. What is tested is where an idea goes when someone says a practice should stop existing, and what happened to the idea and to the last person who tried.</div></li>
-            <li><div><strong>Team.</strong>Vetting against criteria, 1 to 3 people per business area, nominated by the client. Vetting names who can represent a business that does not exist yet, and who will defend the one that does. A name that cannot do the first does not go on the team. The sponsor can override that in writing, with the reason recorded. That record is itself governance.</div></li>
-            <li><div><strong>MVG. Minimum Viable Governance.</strong>One page. Decision rights, guardrails, escalation path, and the test every past decision has to pass: does this decision survive the future market.</div></li>
-          </ol>
-          <p>That test takes protectionism out of the argument, because it challenges the history of the decision instead of the person defending it. It runs in both directions. It makes protecting a decision that no longer contributes to the company's future impossible. It also gives a genuinely industry-specific process, one that neither the software provider nor the ISV market covers, a place to survive on the record.</p>
-          <p class="callout"><strong>What lands:</strong> the diagnosis, and the signed MVG page. That is the minimum, not the scope.</p>
-          <p>What moves 1 week to 4: business areas, sites and languages in scope; whether the programme is already running and has a history to read; how deep the vetting goes.</p>
-          <p>The scope is agreed before the work starts. Fixed fee for a defined window. The diagnostic ends within that window, including when the finding is that the organisation is not ready.</p>
+  <section id="how" aria-labelledby="how-title">
+    <div class="intro">
+      <h2 id="how-title">How it <span class="o">runs</span></h2>
+      <p class="hi measure" style="font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:500">Two engagements.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <span class="fill" aria-hidden="true"></span>
+      <article class="step" aria-labelledby="s1-title">
+        <span class="num" aria-hidden="true">01</span>
+        <div class="stack">
+          <p class="label">Stage 1 · <span class="dur">1 to 4 weeks</span></p>
+          <h3 id="s1-title" style="font-size:clamp(1.5rem,3vw,2.6rem)">Transformation Integrity Diagnostic</h3>
+          <p class="measure">Four parts, in order. Each one only matters if the one above it holds.</p>
+          <p class="measure"><strong>What lands:</strong> the diagnosis, and the signed MVG page. That is the minimum, not the scope.</p>
+          <p class="measure">The scope is agreed before the work starts. Fixed fee for a defined window. The diagnostic ends within that window, including when the finding is that the organisation is not ready.</p>
+          <button class="btn btn-line" type="button" data-open="scope1">Explore the scope <span class="arr">→</span></button>
         </div>
       </article>
-
-      <article class="stage" aria-labelledby="s2-title">
-        <div class="stage-meta">
-          <span class="num">2</span>
-          <p class="label">Stage 2</p>
-          <p class="dur">3 months, extended for another month</p>
-        </div>
-        <div class="prose" style="max-width:none">
-          <h3 id="s2-title">Transformation Governance Gatekeeping</h3>
-          <p class="quiet">Stage 1 sets the guardrails. Stage 2 holds them while the programme runs.</p>
-          <p>Gatekeeping runs at the decision forums, steering and design authority. The workshops are covered by the stream leaders, who report against the guardrails into a standing session with the sponsor. A stream leader who has to report against a guardrail every week starts enforcing it before it reaches the forum.</p>
-          <p>A violated guardrail goes to the sponsor as a flag. An ignored flag goes to steering as a named decision with an owner and a date. Where governance decisions are overruled repeatedly, the retainer ends.</p>
-          <p class="callout">Stage 2 without Stage 1 is possible, after a short baseline that ends in a signed MVG page. Without that page there are no guardrails to hold, and gatekeeping is attendance.</p>
+      <article class="step" aria-labelledby="s2-title">
+        <span class="num" aria-hidden="true">02</span>
+        <div class="stack">
+          <p class="label">Stage 2 · <span class="dur">3 months, extended for another month</span></p>
+          <h3 id="s2-title" style="font-size:clamp(1.5rem,3vw,2.6rem)">Transformation Governance Gatekeeping</h3>
+          <p class="measure">Stage 1 sets the guardrails. Stage 2 holds them while the programme runs.</p>
+          <p class="measure">A violated guardrail goes to the sponsor as a flag. An ignored flag goes to steering as a named decision with an owner and a date. Where governance decisions are overruled repeatedly, the retainer ends.</p>
+          <button class="btn btn-line" type="button" data-open="scope2">Explore the scope <span class="arr">→</span></button>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="band" id="evidence" aria-labelledby="evidence-title">
-    <div class="wrap">
-      <div class="section-head">
-        
-        <h2 id="evidence-title">Evidence</h2>
-        <p class="quiet">Furniture manufacturing. Project-based order intake. The client cannot be named.</p>
+  <section id="evidence" aria-labelledby="evidence-title">
+    <div class="intro">
+      <h2 id="evidence-title">The <span class="o">evidence</span></h2>
+      <p class="hi measure" style="font-size:clamp(1.1rem,1.6vw,1.3rem);font-weight:500">Furniture manufacturing. Project-based order intake. The client cannot be named.</p>
+    </div>
+    <div class="case">
+      <div class="figs">
+        <div class="fig"><span class="tag m">Measured</span><span class="val">10 : 80</span><p>10 percent of manufactured items accounted for 80 percent of production volume.</p></div>
+        <div class="fig"><span class="tag x">Modelled</span><span class="val">−90%</span><p>Up to 90 percent fewer production orders.</p></div>
+        <div class="fig"><span class="tag x">Modelled</span><span class="val">4.5 FTE</span><p>Released, with shorter lead times.</p></div>
       </div>
-      <div class="prose">
+      <div class="stack">
+        <p class="label">What was decided</p>
         <p>A 1:1 requirement structure across the full supply chain was classified as a must-have by the business team. The steering committee supported it. Two years of programme decisions rested on that classification.</p>
+        <p class="label" style="margin-top:.6rem">What the analysis showed</p>
         <p>After a failed go-live my analysis looked at the behaviour of the supply chain: demand cadence, self-absorption of demand variation, item concentration. 10 percent of manufactured items accounted for 80 percent of production volume. Measured.</p>
-      </div>
-      <div class="figures" role="list">
-        <div role="listitem"><span class="tag measured">Measured</span><span class="val">10 : 80</span><span class="what">10 percent of manufactured items, 80 percent of production volume</span></div>
-        <div role="listitem"><span class="tag modelled">Modelled</span><span class="val">up to 90%</span><span class="what">fewer production orders</span></div>
-        <div role="listitem"><span class="tag modelled">Modelled</span><span class="val">4.5 FTE</span><span class="what">released, with shorter lead times</span></div>
-      </div>
-      <div class="prose">
+        <p class="label" style="margin-top:.6rem">What changed</p>
         <p>The requirement was invalidated. The model held strong evidence for moving from requirements management to exception management. Modelled: up to 90 percent fewer production orders, 4.5 FTE released, shorter lead times. Execution is running. The benefit is modelled, not banked.</p>
-        <p class="pull">Nobody tested the requirement. The user story became the requirement. The lack of guardrails permitted old decisions into the new technology.</p>
+        <p class="boxquote" style="margin-top:.6rem">Nobody tested the requirement. The user story became the requirement. The lack of guardrails permitted old decisions into the new technology.</p>
       </div>
     </div>
   </section>
 
-  <section class="band band-raised" id="scope" aria-labelledby="scope-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="label">Boundaries</p>
-        <h2 id="scope-title">What this does not do</h2>
-      </div>
-      <ul class="not-list">
-        <li>No programme management.</li>
-        <li>No change communications.</li>
-        <li>No ERP configuration.</li>
-        <li>No co-delivery with system integrators.</li>
+  <section id="scope" aria-labelledby="scope-title">
+    <div class="intro">
+      <h2 id="scope-title">What this <span class="o">does not do</span></h2>
+      <ul class="chips">
+        <li>No programme management</li>
+        <li>No change communications</li>
+        <li>No ERP configuration</li>
+        <li>No co-delivery with system integrators</li>
       </ul>
     </div>
   </section>
 
-  <section class="band close" id="act" aria-label="Next step">
-    <div class="wrap">
-      <p class="question">Are you transforming the business, or <em>paying to rebuild yesterday's business</em> on newer technology?</p>
-      <div class="hero-actions">
-        <button class="btn btn-primary" type="button" data-open="contact">Book a 30-minute framing call</button>
+  <section id="act" class="close" aria-labelledby="act-title">
+    <h2 id="act-title">Are you transforming the business, or paying to rebuild <span class="o">yesterday's business</span> on newer technology?</h2>
+    <button class="btn" type="button" data-open="contact">Book a 30-minute framing call <span class="arr">→</span></button>
+  </section>
+
+  <section id="peer" aria-labelledby="peer-title">
+    <div class="peer">
+      <div class="stack">
+        <p class="label">For partners and advisors</p>
+        <h3 id="peer-title">The Governance Paradox peer document</h3>
+        <p class="measure">Written for independent advisors, roster firms and implementation partners who sit close to transformation programmes. It covers when to make an introduction, and what it means for an implementation partner. PDF, 12 pages.</p>
       </div>
+      <button class="btn btn-line" type="button" data-open="download">Register to download <span class="arr">→</span></button>
     </div>
   </section>
 
-  <section class="band" id="peer" aria-labelledby="peer-title">
-    <div class="wrap">
-      <div class="peer">
-        <div class="prose">
-          <p class="label">For partners and advisors</p>
-          <h3 id="peer-title">The Governance Paradox peer document</h3>
-          <p class="quiet">Written for independent advisors, roster firms and implementation partners who sit close to transformation programmes. It covers when to make an introduction, and what it means for an implementation partner. PDF, 12 pages.</p>
-        </div>
-        <button class="btn btn-ghost" type="button" data-open="download">Register to download</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="band band-raised" id="about" aria-labelledby="about-title">
-    <div class="wrap about-grid">
-      <div class="prose">
-        <p class="label">About us</p>
-        <h2 id="about-title">Southern Xross Designs Gramann</h2>
-        <p>Independent executive advisory, based in Zürich.</p>
+  <section id="about" aria-labelledby="about-title">
+    <div class="about">
+      <h2 id="about-title">About <span class="o">us</span></h2>
+      <div class="stack measure">
+        <p class="hi" style="font-size:clamp(1.15rem,1.8vw,1.45rem);font-weight:500;line-height:1.4">Southern Xross Designs Gramann. Independent executive advisory, based in Zürich.</p>
         <p>The firm works for the executive sponsor of an ERP or technology-enabled transformation. Its subject is the business decisions a programme carries forward, and who has the authority to close them.</p>
         <p>The firm is independent of software vendors and implementation partners. There are no partner quotas and no utilisation targets behind a recommendation. It does not configure systems and does not co-deliver with system integrators.</p>
         <p>Founded and led by Joe Gramann. His background is global business transformation, operations and Microsoft Dynamics 365 Finance and Supply Chain programmes.</p>
       </div>
-      <img src="assets/mark.png" alt="Southern Xross Designs radial mark" width="288" height="291" loading="lazy">
     </div>
   </section>
 
 </main>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <address>
-      <strong style="color:var(--paper)">Southern Xross Designs Gramann</strong>
-      <span>8053 Zürich, Switzerland · UID CHE-302.345.492</span>
-      <span class="copy-line"><span id="mailText">joe@southernxdesigns.com</span> <button class="copy-btn" type="button" data-copy="mailText">Copy</button></span>
-      <span class="copy-line"><span id="phoneText">+41 79 137 56 41</span> <button class="copy-btn" type="button" data-copy="phoneText">Copy</button></span>
-    </address>
-    <nav aria-label="Legal">
-      <a href="privacy.html">Privacy notice</a>
-      <a href="privacy.html#imprint">Imprint</a>
-      <span>© <span id="year">2026</span></span>
-    </nav>
-  </div>
+<footer>
+  <address>
+    <strong>Southern Xross Designs Gramann</strong>
+    <span>8053 Zürich, Switzerland · UID CHE-302.345.492</span>
+    <span class="copyline"><span id="mailText">joe@southernxdesigns.com</span> <button class="copy" type="button" data-copy="mailText">Copy</button></span>
+    <span class="copyline"><span id="phoneText">+41 79 137 56 41</span> <button class="copy" type="button" data-copy="phoneText">Copy</button></span>
+  </address>
+  <nav aria-label="Legal">
+    <a href="privacy.html">Privacy notice</a>
+    <a href="privacy.html#imprint">Imprint</a>
+    <span>© <span id="year">2026</span></span>
+  </nav>
 </footer>
 
-<!-- Contact pop-up -->
-<dialog id="dlg-contact" aria-labelledby="contact-title">
-  <div class="dlg-head">
-    <div>
-      <p class="label">30-minute framing call</p>
-      <h2 id="contact-title">Talk it through</h2>
+<!-- Stage 1 scope -->
+<dialog id="dlg-scope1" class="scope" aria-labelledby="sc1-title">
+  <div class="dlg-in">
+    <div class="dlg-top">
+      <div class="stack" style="gap:.6rem"><p class="label">Stage 1 · 1 to 4 weeks</p><h2 id="sc1-title">Transformation Integrity Diagnostic</h2></div>
+      <button class="x" type="button" data-close>Close</button>
     </div>
-    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <p class="hi">Four parts, in order. Each one only matters if the one above it holds.</p>
+    <div class="parts">
+      <div class="card"><p class="label">01</p><h3>Destination</h3><p>What the company is becoming, and how far that has travelled. Interviews run on volunteers, every level, plus a required set: sponsor, steering members, process owners. Volunteers, because we want the unfiltered, unbiased state. Interviews also include people who do not volunteer. A curated sample tells you what the organisation wants you to hear.</p></div>
+      <div class="card"><p class="label">02</p><h3>Culture</h3><p>Whether the organisation can reinvent itself, or only protect what it has. Same interviews. What is tested is where an idea goes when someone says a practice should stop existing, and what happened to the idea and to the last person who tried.</p></div>
+      <div class="card"><p class="label">03</p><h3>Team</h3><p>Vetting against criteria, 1 to 3 people per business area, nominated by the client. Vetting names who can represent a business that does not exist yet, and who will defend the one that does. A name that cannot do the first does not go on the team. The sponsor can override that in writing, with the reason recorded. That record is itself governance.</p></div>
+      <div class="card"><p class="label">04</p><h3>MVG. Minimum Viable Governance</h3><p>One page. Decision rights, guardrails, escalation path, and the test every past decision has to pass: does this decision survive the future market.</p></div>
+    </div>
+    <p class="measure">That test takes protectionism out of the argument, because it challenges the history of the decision instead of the person defending it. It runs in both directions. It makes protecting a decision that no longer contributes to the company's future impossible. It also gives a genuinely industry-specific process, one that neither the software provider nor the ISV market covers, a place to survive on the record.</p>
+    <p class="measure"><strong>What lands:</strong> the diagnosis, and the signed MVG page. That is the minimum, not the scope.</p>
+    <p class="measure">What moves 1 week to 4: business areas, sites and languages in scope; whether the programme is already running and has a history to read; how deep the vetting goes.</p>
+    <p class="measure">The scope is agreed before the work starts. Fixed fee for a defined window. The diagnostic ends within that window, including when the finding is that the organisation is not ready.</p>
+    <div><button class="x" type="button" data-close>Close</button></div>
   </div>
-  <div class="form-body">
-    <p class="quiet" style="margin-bottom:1rem">One call settles whether the diagnostic is the right next move.</p>
-    <form id="form-contact" data-kind="contact" novalidate>
-      <div class="row2">
-        <div class="field"><label for="c-first">First name <span class="req">*</span></label><input id="c-first" name="first_name" autocomplete="given-name" required></div>
-        <div class="field"><label for="c-last">Last name <span class="req">*</span></label><input id="c-last" name="last_name" autocomplete="family-name" required></div>
-      </div>
-      <div class="field"><label for="c-email">Work email <span class="req">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="row2">
-        <div class="field"><label for="c-company">Company</label><input id="c-company" name="company" autocomplete="organization"></div>
-        <div class="field"><label for="c-role">Role / title</label><input id="c-role" name="role" autocomplete="organization-title"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="c-country">Country</label><input id="c-country" name="country" autocomplete="country-name"></div>
-        <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
-      </div>
-      <div class="field"><label for="c-stage">Programme stage</label>
-        <select id="c-stage" name="programme_stage">
-          <option value="">Select</option>
-          <option>Approval and planning</option>
-          <option>Partner selection</option>
-          <option>Mobilisation</option>
-          <option>Implementation running</option>
-          <option>After go-live</option>
-        </select>
-      </div>
-      <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message"></textarea></div>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <p class="fine">Your details are used only to reply to you. See the <a href="privacy.html">privacy notice</a>.</p>
-      <p class="form-msg" role="status" aria-live="polite"></p>
-      <div><button class="btn btn-primary" type="submit">Send request</button></div>
-    </form>
+</dialog>
+
+<!-- Stage 2 scope -->
+<dialog id="dlg-scope2" class="scope" aria-labelledby="sc2-title">
+  <div class="dlg-in">
+    <div class="dlg-top">
+      <div class="stack" style="gap:.6rem"><p class="label">Stage 2 · 3 months, extended for another month</p><h2 id="sc2-title">Transformation Governance Gatekeeping</h2></div>
+      <button class="x" type="button" data-close>Close</button>
+    </div>
+    <p class="hi">Stage 1 sets the guardrails. Stage 2 holds them while the programme runs.</p>
+    <div class="parts" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr))">
+      <div class="card"><p class="label">Forums</p><p>Gatekeeping runs at the decision forums, steering and design authority. The workshops are covered by the stream leaders, who report against the guardrails into a standing session with the sponsor. A stream leader who has to report against a guardrail every week starts enforcing it before it reaches the forum.</p></div>
+      <div class="card"><p class="label">Escalation</p><p>A violated guardrail goes to the sponsor as a flag. An ignored flag goes to steering as a named decision with an owner and a date. Where governance decisions are overruled repeatedly, the retainer ends.</p></div>
+      <div class="card"><p class="label">Without Stage 1</p><p>Stage 2 without Stage 1 is possible, after a short baseline that ends in a signed MVG page. Without that page there are no guardrails to hold, and gatekeeping is attendance.</p></div>
+    </div>
+    <div><button class="x" type="button" data-close>Close</button></div>
   </div>
-  <div class="done" hidden>
-    <p class="pull">Thank you. Joe will reply within 2 working days.</p>
-    <div><button class="btn btn-ghost" type="button" data-close>Close</button></div>
+</dialog>
+
+<!-- Contact: two routes -->
+<dialog id="dlg-contact" class="dlg" aria-labelledby="contact-title">
+  <div class="dlg-in">
+    <div class="dlg-top">
+      <div class="stack" style="gap:.6rem"><p class="label">30-minute framing call</p><h2 id="contact-title">Talk it <span class="o">through</span></h2></div>
+      <button class="x" type="button" data-close>Close</button>
+    </div>
+    <p>One call settles whether the diagnostic is the right next move.</p>
+    <div class="routes">
+      <div class="card"><p class="label">Route 1</p><h3>Pick a time</h3><p>Choose a 30-minute slot directly in the calendar.</p><a class="btn" id="bookingLink" href="#" target="_blank" rel="noopener">Open the calendar <span class="arr">→</span></a></div>
+      <div class="card"><p class="label">Route 2</p><h3>Write first</h3><p>Leave your details and Joe proposes times within 2 working days.</p><p class="copyline" style="font-size:.85rem"><span id="mailText2">joe@southernxdesigns.com</span> <button class="copy" type="button" data-copy="mailText2">Copy</button></p></div>
+    </div>
+    <div class="form-body">
+      <form id="form-contact" data-kind="contact" novalidate>
+        <div class="row2">
+          <div class="field"><label for="c-first">First name <span class="req">*</span></label><input id="c-first" name="first_name" autocomplete="given-name" required></div>
+          <div class="field"><label for="c-last">Last name <span class="req">*</span></label><input id="c-last" name="last_name" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label for="c-email">Work email <span class="req">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="row2">
+          <div class="field"><label for="c-company">Company</label><input id="c-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="c-role">Role / title</label><input id="c-role" name="role" autocomplete="organization-title"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="c-country">Country</label><input id="c-country" name="country" autocomplete="country-name"></div>
+          <div class="field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="c-stage">Programme stage</label>
+          <select id="c-stage" name="programme_stage"><option value="">Select</option><option>Approval and planning</option><option>Partner selection</option><option>Mobilisation</option><option>Implementation running</option><option>After go-live</option></select>
+        </div>
+        <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message"></textarea></div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <p class="fine">Your details are used only to reply to you. See the <a href="privacy.html">privacy notice</a>.</p>
+        <p class="msg" role="status" aria-live="polite"></p>
+        <div><button class="btn" type="submit">Send request <span class="arr">→</span></button></div>
+      </form>
+    </div>
+    <div class="done stack" hidden>
+      <h3>Thank you. Joe will reply within 2 working days.</h3>
+      <div><button class="x" type="button" data-close>Close</button></div>
+    </div>
   </div>
 </dialog>
 
 <!-- Download registration -->
-<dialog id="dlg-download" aria-labelledby="download-title">
-  <div class="dlg-head">
-    <div>
-      <p class="label">Peer document · PDF</p>
-      <h2 id="download-title">Register to download</h2>
+<dialog id="dlg-download" class="dlg" aria-labelledby="download-title">
+  <div class="dlg-in">
+    <div class="dlg-top">
+      <div class="stack" style="gap:.6rem"><p class="label">Peer document · PDF</p><h2 id="download-title">Register to <span class="o">download</span></h2></div>
+      <button class="x" type="button" data-close>Close</button>
     </div>
-    <button class="x" type="button" data-close aria-label="Close">×</button>
-  </div>
-  <div class="form-body">
-    <form id="form-download" data-kind="download" novalidate>
-      <div class="row2">
-        <div class="field"><label for="d-first">First name <span class="req">*</span></label><input id="d-first" name="first_name" autocomplete="given-name" required></div>
-        <div class="field"><label for="d-last">Last name <span class="req">*</span></label><input id="d-last" name="last_name" autocomplete="family-name" required></div>
-      </div>
-      <div class="field"><label for="d-email">Work email <span class="req">*</span></label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="row2">
-        <div class="field"><label for="d-company">Company</label><input id="d-company" name="company" autocomplete="organization"></div>
-        <div class="field"><label for="d-role">Role / title</label><input id="d-role" name="role" autocomplete="organization-title"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label for="d-country">Country</label><input id="d-country" name="country" autocomplete="country-name"></div>
-        <div class="field"><label for="d-phone">Phone</label><input id="d-phone" name="phone" type="tel" autocomplete="tel"></div>
-      </div>
-      <div class="field"><label for="d-stage">Programme stage</label>
-        <select id="d-stage" name="programme_stage">
-          <option value="">Select</option>
-          <option>Approval and planning</option>
-          <option>Partner selection</option>
-          <option>Mobilisation</option>
-          <option>Implementation running</option>
-          <option>After go-live</option>
-          <option>I advise companies in transformation</option>
-        </select>
-      </div>
-      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
-      <p class="fine">Your details are used to send you this document and, if you ask for it, to follow up. See the <a href="privacy.html">privacy notice</a>.</p>
-      <p class="form-msg" role="status" aria-live="polite"></p>
-      <div><button class="btn btn-primary" type="submit">Register and download</button></div>
-    </form>
-  </div>
-  <div class="done" hidden>
-    <p class="pull">Thank you. Your copy is ready.</p>
-    <div><a class="btn btn-primary" href="assets/GP_Peer_Document.pdf" target="_blank" rel="noopener">Open the peer document</a></div>
+    <div class="form-body">
+      <form id="form-download" data-kind="download" novalidate>
+        <div class="row2">
+          <div class="field"><label for="d-first">First name <span class="req">*</span></label><input id="d-first" name="first_name" autocomplete="given-name" required></div>
+          <div class="field"><label for="d-last">Last name <span class="req">*</span></label><input id="d-last" name="last_name" autocomplete="family-name" required></div>
+        </div>
+        <div class="field"><label for="d-email">Work email <span class="req">*</span></label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="row2">
+          <div class="field"><label for="d-company">Company</label><input id="d-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="d-role">Role / title</label><input id="d-role" name="role" autocomplete="organization-title"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="d-country">Country</label><input id="d-country" name="country" autocomplete="country-name"></div>
+          <div class="field"><label for="d-phone">Phone</label><input id="d-phone" name="phone" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="d-stage">Programme stage</label>
+          <select id="d-stage" name="programme_stage"><option value="">Select</option><option>Approval and planning</option><option>Partner selection</option><option>Mobilisation</option><option>Implementation running</option><option>After go-live</option><option>I advise companies in transformation</option></select>
+        </div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <p class="fine">Your details are used to send you this document and, if you ask for it, to follow up. See the <a href="privacy.html">privacy notice</a>.</p>
+        <p class="msg" role="status" aria-live="polite"></p>
+        <div><button class="btn" type="submit">Register and download <span class="arr">→</span></button></div>
+      </form>
+    </div>
+    <div class="done stack" hidden>
+      <h3>Thank you. Your copy is ready.</h3>
+      <div><a class="btn" href="assets/GP_Peer_Document.pdf" target="_blank" rel="noopener">Open the peer document <span class="arr">→</span></a></div>
+    </div>
   </div>
 </dialog>
 
 <script>
 (function () {
-  // Formspree form IDs, filled in at go-live. Empty = preview mode (nothing is sent).
+  // Filled in at go-live. Empty values = preview mode.
   var FORMSPREE = { contact: "", download: "" };
+  var BOOKINGS_URL = "";
   var LIVE_HOSTS = ["www.southernxdesigns.com", "southernxdesigns.com"];
-  var POPUP_KEY = "sxd_contact_popup_closed";
-  var POPUP_DAYS = 30;
-  var POPUP_DELAY_MS = 60000;
+  var POPUP_KEY = "sxd_contact_popup_closed", POPUP_DAYS = 30, POPUP_DELAY_MS = 60000;
 
-  var isLive = LIVE_HOSTS.indexOf(location.hostname) !== -1;
-  if (!isLive) document.getElementById("previewStrip").hidden = false;
+  if (LIVE_HOSTS.indexOf(location.hostname) === -1) document.getElementById("previewStrip").hidden = false;
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  function store(get, val) {
-    try { if (get) return localStorage.getItem(POPUP_KEY); localStorage.setItem(POPUP_KEY, val); } catch (e) { return null; }
-  }
+  var booking = document.getElementById("bookingLink");
+  if (BOOKINGS_URL) booking.href = BOOKINGS_URL; else { booking.setAttribute("aria-disabled", "true"); booking.lastChild.textContent = ""; booking.firstChild.textContent = "Calendar link pending "; }
 
-  var dialogs = { contact: document.getElementById("dlg-contact"), download: document.getElementById("dlg-download") };
-  function openDlg(name) {
-    var d = dialogs[name];
-    if (!d || d.open) return;
-    if (typeof d.showModal === "function") d.showModal(); else d.setAttribute("open", "");
-  }
-  function closeDlg(d) {
-    if (typeof d.close === "function") d.close(); else d.removeAttribute("open");
-  }
+  function store(get, val) { try { if (get) return localStorage.getItem(POPUP_KEY); localStorage.setItem(POPUP_KEY, val); } catch (e) { return null; } }
+
+  var dialogs = {};
+  ["contact", "download", "scope1", "scope2"].forEach(function (k) { dialogs[k] = document.getElementById("dlg-" + k); });
+  function openDlg(name) { var d = dialogs[name]; if (!d || d.open) return; if (d.showModal) d.showModal(); else d.setAttribute("open", ""); }
+  function closeDlg(d) { if (d.close) d.close(); else d.removeAttribute("open"); }
   document.querySelectorAll("[data-open]").forEach(function (b) {
-    b.addEventListener("click", function () { openDlg(b.getAttribute("data-open")); });
+    b.addEventListener("click", function (e) { e.preventDefault(); openDlg(b.getAttribute("data-open")); });
   });
   Object.keys(dialogs).forEach(function (k) {
     var d = dialogs[k];
     d.querySelectorAll("[data-close]").forEach(function (b) { b.addEventListener("click", function () { closeDlg(d); }); });
     d.addEventListener("click", function (e) { if (e.target === d) closeDlg(d); });
   });
-  // Any close of the contact dialog suppresses the automatic pop-up for 30 days.
   dialogs.contact.addEventListener("close", function () { store(false, String(Date.now())); });
 
-  // Engagement-triggered contact pop-up: past the five questions, or 60 seconds on the page.
+  // Pop-up after the five questions or 60 s, once, then quiet for 30 days.
   var fired = false;
-  function recentlyClosed() {
-    var t = Number(store(true) || 0);
-    return t && (Date.now() - t) < POPUP_DAYS * 864e5;
-  }
-  function autoOpen() {
-    if (fired || recentlyClosed()) return;
-    if (dialogs.download.open) return;
-    fired = true;
-    openDlg("contact");
-  }
+  function recentlyClosed() { var t = Number(store(true) || 0); return t && (Date.now() - t) < POPUP_DAYS * 864e5; }
+  function anyOpen() { return Object.keys(dialogs).some(function (k) { return dialogs[k].open; }); }
+  function autoOpen() { if (fired || recentlyClosed() || anyOpen()) return; fired = true; openDlg("contact"); }
   var marker = document.getElementById("questionsEnd");
   if ("IntersectionObserver" in window && marker) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting || en.boundingClientRect.top < 0) { autoOpen(); io.disconnect(); } });
-    });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting || en.boundingClientRect.top < 0) { autoOpen(); io.disconnect(); } }); });
     io.observe(marker);
   }
   setTimeout(autoOpen, POPUP_DELAY_MS);
+
+  // Timeline progress line
+  var tl = document.getElementById("timeline");
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (tl && !reduce) {
+    var tick = function () {
+      var r = tl.getBoundingClientRect(), vh = innerHeight;
+      var p = Math.min(1, Math.max(0, (vh * 0.7 - r.top) / r.height));
+      tl.style.setProperty("--p", p.toFixed(3));
+    };
+    addEventListener("scroll", tick, { passive: true }); addEventListener("resize", tick); tick();
+  }
 
   // Forms
   document.querySelectorAll("form[data-kind]").forEach(function (f) {
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var msg = f.querySelector(".form-msg");
-      msg.className = "form-msg"; msg.textContent = "";
+      var msg = f.querySelector(".msg"); msg.className = "msg"; msg.textContent = "";
       var missing = Array.prototype.filter.call(f.querySelectorAll("[required]"), function (i) { return !i.value.trim(); });
       var email = f.querySelector("input[type=email]");
-      if (missing.length) { msg.className = "form-msg err"; msg.textContent = "Please fill in first name, last name and work email."; missing[0].focus(); return; }
-      if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { msg.className = "form-msg err"; msg.textContent = "Please check the email address."; email.focus(); return; }
-      var kind = f.getAttribute("data-kind");
-      var dlg = f.closest("dialog");
-      function done() { dlg.querySelector(".form-body").hidden = true; dlg.querySelector(".done").hidden = false; }
+      if (missing.length) { msg.className = "msg err"; msg.textContent = "Please fill in first name, last name and work email."; missing[0].focus(); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { msg.className = "msg err"; msg.textContent = "Please check the email address."; email.focus(); return; }
+      var kind = f.getAttribute("data-kind"), dlg = f.closest("dialog");
+      function done() { dlg.querySelector(".form-body").hidden = true; dlg.querySelector(".done").hidden = false; var r = dlg.querySelector(".routes"); if (r) r.hidden = true; }
       var id = FORMSPREE[kind];
-      if (!id) { done(); return; } // preview mode
-      var btn = f.querySelector("button[type=submit]");
-      btn.disabled = true;
+      if (!id) { done(); return; }
+      var btn = f.querySelector("button[type=submit]"); btn.disabled = true;
       var data = new FormData(f);
       data.append("_subject", kind === "contact" ? "Website: framing call request" : "Website: peer document download");
       fetch("https://formspree.io/f/" + id, { method: "POST", body: data, headers: { Accept: "application/json" } })
         .then(function (r) { if (!r.ok) throw new Error(); done(); })
-        .catch(function () { msg.className = "form-msg err"; msg.textContent = "The form could not be sent. Please email joe@southernxdesigns.com instead."; })
+        .catch(function () { msg.className = "msg err"; msg.textContent = "The form could not be sent. Please email joe@southernxdesigns.com instead."; })
         .then(function () { btn.disabled = false; });
     });
   });
@@ -712,12 +646,9 @@ textarea { min-height: 6rem; resize: vertical; }
   // Copy buttons
   document.querySelectorAll("[data-copy]").forEach(function (b) {
     b.addEventListener("click", function () {
-      var el = document.getElementById(b.getAttribute("data-copy"));
-      var text = el.textContent.trim();
-      function selectIt() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); }, selectIt);
-      } else { selectIt(); }
+      var el = document.getElementById(b.getAttribute("data-copy")), text = el.textContent.trim();
+      function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { b.textContent = "Copied"; setTimeout(function () { b.textContent = "Copy"; }, 1500); }, sel); else sel();
     });
   });
 })();
