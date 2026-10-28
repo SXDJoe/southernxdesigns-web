@@ -119,6 +119,9 @@ section:last-of-type { padding-bottom: clamp(5rem, 10vw, 9rem); }
 }
 @keyframes mark-in { from { transform: rotate(-14deg) scale(.92); opacity: .4; } to { transform: none; opacity: .95; } }
 @media (max-width: 640px) { .hero-mark { right: var(--edge); bottom: 16px; width: 130px; opacity: .7; } }
+.scroll-cue { position: absolute; left: 50%; bottom: clamp(16px, 4vh, 40px); transform: translateX(-50%); color: var(--signal); padding: .5rem; display: block; line-height: 0; animation: cue 1.8s ease-in-out infinite; }
+.scroll-cue:hover { color: var(--paper); }
+@keyframes cue { 0%, 100% { transform: translate(-50%, 0); opacity: 1; } 50% { transform: translate(-50%, 10px); opacity: .55; } }
 .hero { text-align: center; padding-block: clamp(3rem, 8vw, 6rem); min-height: calc(100vh - 76px); min-height: calc(100svh - 76px); align-content: center; display: grid; gap: clamp(1.8rem, 3vw, 2.6rem); justify-items: center; }
 .hero h1 span { display: block; animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
 .hero h1 span:nth-child(2) { animation-delay: .08s; }
@@ -232,7 +235,7 @@ textarea { min-height: 5.5rem; resize: vertical; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .hero h1 span, .hero-mark { animation: none; }
+  .hero h1 span, .hero-mark, .scroll-cue { animation: none; }
   .timeline .fill { transform: scaleY(1); }
 }
 </style>
@@ -260,6 +263,9 @@ textarea { min-height: 5.5rem; resize: vertical; }
     <div class="actions">
       <button class="btn" type="button" data-open="contact">Book a 30-minute framing call <span class="arr">→</span></button>
     </div>
+    <a class="scroll-cue" href="#approach" aria-label="Scroll to the next section">
+      <svg viewBox="0 0 24 36" width="24" height="36" aria-hidden="true"><path d="M12 2v28M3 22l9 10 9-10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>
+    </a>
   </section>
 
   <section id="approach" aria-labelledby="paradox-title">
